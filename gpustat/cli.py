@@ -5,7 +5,6 @@ from contextlib import suppress
 
 from blessed import Terminal
 
-from gpustat import __version__
 from gpustat.core import GPUStatCollection
 
 
@@ -187,8 +186,6 @@ def main(*argv):
         '--no-processes', dest='no_processes', action='store_true',
         help='Do not display running process information (memory, user, etc.)'
     )
-    parser.add_argument('-v', '--version', action='version',
-                        version=('gpustat %s' % __version__))
     args = parser.parse_args(argv[1:])
     # TypeError: GPUStatCollection.print_formatted() got an unexpected keyword argument 'print_completion'
     with suppress(AttributeError):
